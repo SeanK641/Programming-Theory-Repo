@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Coin
+  - Crab
+  - Enemy
   layers:
   - Default
   - TransparentFX
