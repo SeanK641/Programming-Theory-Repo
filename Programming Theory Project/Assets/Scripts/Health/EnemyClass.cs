@@ -6,19 +6,37 @@ using TMPro;
 
 public class EnemyClass : MonoBehaviour
 {
+    public int life;
     public TextMeshProUGUI HealthText;
-    public int Life;
+    public GameObject gameOverText;
+    public bool gameOver = false;
+
+    private Animator playerAnim;
+    //Can call Scripts using Object. 
+    private Object playerController; 
 
     // Start is called before the first frame update
     void Start()
     {
-        Life = 50;
+        life = 50;
+
+        //Calls animator component from the Bee
+        playerAnim = GameObject.Find("Bee").GetComponent<Animator>();
+        //Destories the Player Controller Script, Preventing the Player from Movement
+        playerController = GetComponent<PlayerController>();
     }
 
     public virtual void HealthMeter() 
     {
-        Life -= 10;
-        HealthText.text = "Health : " + Life;
+        life -= 10;
+        HealthText.text = "Health : " + life;
+
+        if (life < 10)
+        {
+            playerAnim.SetBool("Death", true);
+            GameOver();
+            Destroy(playerController);
+        }
     }
 
     //Keep Private
@@ -28,5 +46,17 @@ public class EnemyClass : MonoBehaviour
         {
             HealthMeter();
         }
+
+        if (other.gameObject.CompareTag("Heart"))
+        {
+            life += 10;
+            HealthText.text = "Health : " + life;
+        }
+    }
+
+    public void GameOver()
+    {
+        gameOverText.gameObject.SetActive(true);
+        gameOver = true;
     }
 }

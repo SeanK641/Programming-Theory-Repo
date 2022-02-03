@@ -8,6 +8,9 @@ TagManager:
   - Coin
   - Crab
   - Enemy
+  - Chest
+  - GemStone
+  - Heart
   layers:
   - Default
   - TransparentFX
