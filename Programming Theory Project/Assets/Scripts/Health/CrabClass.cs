@@ -19,6 +19,7 @@ public class CrabClass : EnemyClass
         life = 0;
         gameOver = true;
         gameOverText.gameObject.SetActive(true);
+        gameOverButton.gameObject.SetActive(true);
         playerAnim.SetBool("Death", true);
         HealthText.text = "Health : " + life;
     }
@@ -32,6 +33,7 @@ public class CrabClass : EnemyClass
         playerController = GameObject.Find("Player").GetComponent<PlayerController>();
 
     }
+
     //Keep Public
     public void OnTriggerEnter(Collider other)
     {

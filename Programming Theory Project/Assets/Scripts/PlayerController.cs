@@ -6,13 +6,15 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 10;
-    public float jumpHeight = 10;
+    //ENCAPSULATION
+    private float speed = 10;
+    [SerializeField] private float jumpHeight = 10;
+
     public bool isOnGround = true;
     private Rigidbody playerRb;
 
     // Update is called once per frame
-    public void Update()
+    public void LateUpdate()
     {
         PlayerMovement();
     }

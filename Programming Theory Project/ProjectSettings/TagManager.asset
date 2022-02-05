@@ -11,6 +11,7 @@ TagManager:
   - Chest
   - GemStone
   - Heart
+  - Key
   layers:
   - Default
   - TransparentFX

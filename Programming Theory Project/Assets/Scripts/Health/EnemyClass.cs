@@ -9,6 +9,7 @@ public class EnemyClass : MonoBehaviour
     public int life;
     public TextMeshProUGUI HealthText;
     public GameObject gameOverText;
+    public Button gameOverButton;
     public bool gameOver = false;
 
     private Animator playerAnim;
@@ -57,6 +58,7 @@ public class EnemyClass : MonoBehaviour
     public void GameOver()
     {
         gameOverText.gameObject.SetActive(true);
+        gameOverButton.gameObject.SetActive(true);
         gameOver = true;
     }
 }
