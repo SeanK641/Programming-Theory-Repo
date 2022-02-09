@@ -8,7 +8,7 @@ public class EndLevel : MonoBehaviour
 {
     //Can call Scripts using Object. 
     private Object playerController;
-
+    public Button restartButton;
     public GameObject wellDoneText;
 
     // Start is called before the first frame update
@@ -24,6 +24,7 @@ public class EndLevel : MonoBehaviour
         {
             Destroy(playerController);
             wellDoneText.gameObject.SetActive(true);
+            restartButton.gameObject.SetActive(true);
         }
     }
 }
